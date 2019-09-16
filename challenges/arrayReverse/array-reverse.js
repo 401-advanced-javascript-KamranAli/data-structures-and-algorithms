@@ -1,6 +1,11 @@
 
-const array = [];
+let newArray = [1, 2, 3, 4, 5, 6];
 
-export default function reverseArray(array) {
-    return array.reverse();
-};
+function reverseArray(array) {
+    for (i = array.length - 1; i >= 0; i--) {
+        newArray.push(array[i]);
+    }
+    return newArray
+}
+
+reverseArray();
