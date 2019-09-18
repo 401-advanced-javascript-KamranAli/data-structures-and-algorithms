@@ -1,15 +1,14 @@
 # data-structures-and-algorithms
 
 ### Array Shift
-I need to be able to take an array and ut a value into the start of it without using methods
+tasked to put something into an array without using .shift()
 
 #### Challenge
 
-I need to be able to take an array and ut a value into the start of it without using methods
+I need to be able to take an array and put a value into the start of it without using methods
 
 ##### Approach and Efficiency
-
-I'm trying to loop through the array and put a new value at the start of the array.
+my approach is to loop through the array, find where the whole is in the array; in this case at the start of the new array, and the plugging in another item into that spot.
 
 ###### Solution
 

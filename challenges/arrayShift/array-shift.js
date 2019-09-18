@@ -1,9 +1,12 @@
 
-function shift(array, value) {
+function shift(array, insertNum) {
   const startArray = [];
-  for (let i = 0; i < array.length; i += 1) {
-    startArray[i] = startArray[i + 1] || 0;
+  const stuff = array.length;
+  for (let i = 0; i < stuff; i++) {
+    startArray[i +1] = array[i]
   }
+  startArray[0] = insertNum;  
+  return startArray;
 }
 
 module.exports = shift;
