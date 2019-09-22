@@ -13,4 +13,4 @@ I am taking the divide and conquer route using a while loop to go through multip
 
 ###### Solution
 
-![whiteboard]()
+![whiteboard](/assets/whiteboard3.png)

@@ -1,11 +1,13 @@
-const binarySearchForReal = require('./array-binary-search');
+const binarySearch = require('./array-binary-search.js');
 
 const array = [4, 8, 15, 16, 23, 42];
 const searchValue = 15;
-const result = binarySearchForReal(array, searchValue);
+const result = binarySearch(array, searchValue);
 
-describe('Search for value', () => {
-  it('search for 15', () => {
-    expect(result).toStrictEqual([15]);
+describe('binary search', () => {
+  
+  it('binary search', () => {
+    expect(result).toBe(2);
   });
+
 });
