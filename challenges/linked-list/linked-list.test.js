@@ -23,8 +23,9 @@ describe('linked lists', () => {
     const list = new LinkList;
     list.insert('node1');
     expect(list.includes(list.head.num)).toBe(true);
+    expect(list.includes('node2')).toBe(false);
   });
-
+  
   it('returns a string of all the values in the linked list', () => {
     const list = new LinkList;
     list.insert('node1');
