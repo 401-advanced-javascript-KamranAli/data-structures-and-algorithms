@@ -5,7 +5,8 @@ describe('linked lists', () => {
     const list = new LinkList();
     const result = {
       length: 0,
-      head: null
+      head: null,
+      tail: null
     };
     expect(list).toEqual(result);
   });
@@ -31,6 +32,55 @@ describe('linked lists', () => {
     list.insert('node1');
     const result = list.head.num;
     expect(list.head.num.toString()).toBe(result);
+  });
+
+  it('appending to a linked list', () => {
+    const list = new LinkList();
+    list.insert('node1');
+    list.insert('node2');
+    list.append('node3');
+    expect(list.length).toBe(3);
+  });
+
+  it('appending multiple nodes to a linked list', () => {
+    const list = new LinkList();
+    list.insert('node1');
+    list.insert('node2');
+    list.append('node3');
+    list.append('node4');
+    list.append('node5');
+    expect(list.length).toBe(5);
+  });
+
+  it('insert a node before a node in the middle of a linked list', () => {
+    const list = new LinkList();
+    list.insert('node1');
+    list.insert('node2');
+    list.insert('node3');
+    list.insert('node4');
+    list.insert('node5');
+    list.insertBefore('node3', 'node2.5');
+    expect(list.length).toBe(6);
+  });
+
+  it('insert a node before the first node of a linked list', () => {
+    const list = new LinkList();
+    list.insert('node1');
+    list.insert('node2');
+    list.insert('node3');
+    list.insert('node4');
+    list.insertBefore('node1', 'node0.5');
+    expect(list.length).toBe(5);
+  });
+
+  it('insert a node after a node in the middle of a linked list', () => {
+    const list = new LinkList();
+    list.insert('node1');
+    list.insert('node2');
+    list.insert('node3');
+    list.insert('node4');
+    list.insertAfter('node2', 'node2.5');
+    expect(list.length).toBe(5);
   });
 
 });
