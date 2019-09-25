@@ -83,4 +83,52 @@ describe('linked lists', () => {
     expect(list.length).toBe(5);
   });
 
+  it('k greater than the length of list', () => {
+    const list = new LinkList();
+    list.insert('node1');
+    list.insert('node2');
+    list.insert('node3');
+    const k = 4;
+    const result = list.findingKth(k);
+    expect(result).toBe('exception');
+  });
+
+  it('k and length of the list are the same', () => {
+    const list = new LinkList();
+    list.insert('node1');
+    list.insert('node2');
+    list.insert('node3');
+    const k = 3;
+    const result = list.findingKth(k);
+    expect(result).toBe('equal length');
+  });
+
+  it('k is not a positive int', () => {
+    const list = new LinkList();
+    list.insert('node1');
+    list.insert('node2');
+    list.insert('node3');
+    const k = -3;
+    const result = list.findingKth(k);
+    expect(result).toBe('not a positive int');
+  });
+
+  it('k is not the length', () => {
+    const list = new LinkList();
+    list.insert('node1');
+    const k = 0;
+    const result = list.findingKth(k);
+    expect(result).toBe('not the same length');
+  });
+
+  it('k is in happy place', () => {
+    const list = new LinkList();
+    list.insert('node1');
+    list.insert('node2');
+    list.insert('node3');
+    const k = 1;
+    const result = list.findingKth(k);
+    expect(result).toBe('happy place');
+  });
+
 });

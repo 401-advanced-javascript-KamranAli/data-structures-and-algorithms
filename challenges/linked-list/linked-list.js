@@ -70,13 +70,13 @@ class LinkList {
   insertAfter(value, newValue) {
     const newNode = new CurrentNode(newValue);
     let currentNode = this.tail;
-    if(this.tail === null){
+    if(this.tail === null) {
       this.tail = newNode;
       this.length++;
       return this.tail;
     }
     let nodeCount = 1;
-    while(currentNode.next !== null && nodeCount > value){
+    while(currentNode.next !== null && nodeCount > value) {
       currentNode = currentNode.next;
       this.length++;
     }
@@ -84,6 +84,32 @@ class LinkList {
     currentNode.next = newNode;
     this.length++;
     return newNode;
+  }
+
+  findingKth(k) {
+    let currentNode = this.head;
+    let counter = 0;
+
+    if(k > this.length) {
+      return 'exception';
+    }
+    if(k === this.length) {
+      return 'equal length';
+    }
+    if(k < 0) {
+      return 'not a positive int';
+    }
+    if(this.length <= 1) {
+      return 'not the same length';
+    }
+    if(k === this.length % 2){
+      return 'happy place';
+    }
+    while(this.length - k !== counter) {
+      currentNode = currentNode.next;
+      counter++;
+      return currentNode.value;
+    }
   }
 }
 
