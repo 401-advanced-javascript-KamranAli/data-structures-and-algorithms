@@ -40,12 +40,16 @@ class LinkList {
 
   append(value) {
     const newNode = new CurrentNode(value);
-    let currentNode = this.head;
-    while(currentNode.next) {
-      currentNode = currentNode.next;
+    if(this.head === null){
+      this.head = newNode;
+    } else {
+      let currentNode = this.head;
+      while(currentNode.next){
+        currentNode = currentNode.next;
+      }
+      currentNode.next = newNode;
+      this.length++;
     }
-    currentNode = newNode;
-    this.length++;
   }
 
   insertBefore(value, newValue) {

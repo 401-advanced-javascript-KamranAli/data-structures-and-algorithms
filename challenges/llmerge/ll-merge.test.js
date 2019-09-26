@@ -1,4 +1,4 @@
-const LinkList = require('./ll-merge');
+const LinkList = require('../linked-list/linked-list');
 const mergeList = require('./ll-merge');
 
 describe('Lists Merge', () => {
@@ -6,14 +6,12 @@ describe('Lists Merge', () => {
     const list1 = new LinkList();
     const list2 = new LinkList();
 
-    list1.insert('1'),
-    list1.insert('3'),
-    list1.insert('2'),
-    list1.insert('5'),
-    list1.insert('9'),
-    list1.insert('4');
-    const result = mergeList(list1, list2);
-    expect(result).toEqual('1', '5', '3', '9', '2', '4');
-
+    list1.insert('1');
+    list1.insert('3');
+    list1.insert('2');
+    list2.insert('5');
+    list2.insert('9');
+    list2.insert('4');
+    expect(mergeList(list1, list2)).toBe('1', '5', '3', '9', '2', '4');
   });
 });
