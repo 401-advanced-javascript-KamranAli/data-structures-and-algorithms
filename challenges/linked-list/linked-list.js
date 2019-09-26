@@ -102,9 +102,6 @@ class LinkList {
     if(this.length <= 1) {
       return 'not the same length';
     }
-    if(k === this.length % 2){
-      return 'happy place';
-    }
     while(this.length - k !== counter) {
       currentNode = currentNode.next;
       counter++;

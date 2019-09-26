@@ -128,7 +128,7 @@ describe('linked lists', () => {
     list.insert('node3');
     const k = 1;
     const result = list.findingKth(k);
-    expect(result).toBe('happy place');
+    expect(result).toBe('node2');
   });
 
 });
