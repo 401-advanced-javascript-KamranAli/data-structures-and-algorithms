@@ -30,12 +30,13 @@ class LinkList {
   }
 
   toString() {
-    let string;
+    let string = ' ';
     let currentNode = this.head;
-    for(let i = 0; i < this.length; i++) {
-      string = string + currentNode.num;
+    while(currentNode !== null) {
+      string = string + ' ' + currentNode.num;
       currentNode = currentNode.next;
     }
+    return string;
   }
 
   append(value) {

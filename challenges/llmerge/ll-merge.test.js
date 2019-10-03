@@ -3,15 +3,17 @@ const mergeList = require('./ll-merge');
 
 describe('Lists Merge', () => {
   it('merges two unordered lists', () => {
-    const list1 = new LinkList();
-    const list2 = new LinkList();
+    const lOne = new LinkList();
+    const lTwo = new LinkList();
 
-    list1.insert('1');
-    list1.insert('3');
-    list1.insert('2');
-    list2.insert('5');
-    list2.insert('9');
-    list2.insert('4');
-    expect(mergeList(list1, list2)).toBe('1', '5', '3', '9', '2', '4');
+    lOne.insert('1');
+    lOne.insert('3');
+    lOne.insert('2');
+    lTwo.insert('5');
+    lTwo.insert('9');
+    lTwo.insert('4');
+
+    const result = mergeList(lOne, lTwo);
+    expect(result.value).toBe('1');
   });
 });

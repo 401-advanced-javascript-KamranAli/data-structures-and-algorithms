@@ -1,33 +1,21 @@
 const LinkList = require('../linked-list/linked-list');
 
-const l1 = new LinkList();
-const l2 = new LinkList();
-
-l1.insert('1');
-l2.insert('5');
-l1.insert('3');
-l2.insert('9');
-l1.insert('2');
-l2.insert('4');
-
-function mergeList(l1, l2) {
+function mergeList(lOne, lTwo) {
   const mergedLists = new LinkList();
 
-  let cN1 = l1.head;
-  let cN2 = l2.head;
+  let cNOne = lOne.head;
+  let cNTwo = lTwo.head;
   
-  while(cN1.next !== null && cN2.next !== null) {
-    mergedLists.append(cN1);
-    mergedLists.append(cN2.value);
-    cN1 = cN1.next;
-    cN2 = cN2.next;
+  while(cNOne.next !== null && cNTwo.next !== null) {
+    mergedLists.append(cNOne.value);
+    mergedLists.append(cNTwo.value);
+    cNOne = cNOne.next;
+    cNTwo = cNTwo.next;
   }
-  mergedLists.append(cN1);
-  console.log(cN1);
-  mergedLists.append(cN2);
-  console.log(cN2);
+  mergedLists.append(cNOne);
+  mergedLists.append(cNTwo);
 
-  // if(l1.length > l2.length) {
+  // if(l1.length > ltwo.length) {
   //   cN1 = cN1.next;
   //   while(cN1.next) {
   //     mergedLists.append(cN1.value);
@@ -46,6 +34,5 @@ function mergeList(l1, l2) {
   // }
   return mergedLists.head;
 }
-mergeList(l1, l2);
 
 module.exports = mergeList;
