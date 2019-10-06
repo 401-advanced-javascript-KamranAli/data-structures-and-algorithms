@@ -33,5 +33,19 @@ describe('stacks and queues', () => {
     expect(stack.top).toBe(null);
   });
 
-  
+  it('can peek the next item on the stack', () => {
+    const stack = new Stack.Stack();
+    stack.push('stuff1');
+    stack.push('stuff');
+    expect(stack.peek()).toBe('stuff');
+  });
+
+  it('can instantiate an empty stack', () => {
+    const emptyStack = new Stack.Stack();
+    expect(emptyStack.top).toBe(null);
+  });
+
+  it('can enqueue on to a queue', () => {
+
+  });
 });

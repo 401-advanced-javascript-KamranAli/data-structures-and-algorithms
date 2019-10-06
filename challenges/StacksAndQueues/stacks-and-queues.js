@@ -33,7 +33,28 @@ class Stack {
   peek() {
     return this.top.value;
   }
-
 }
 
-module.exports = { Stack, Node };
+class Queue {
+  constructor() {
+    this.front = null;
+  }
+
+  enqueue(value) {
+    let newNode = new Node(value);
+    let currentNode = this.front;
+
+    if(!currentNode){
+      this.front = newNode;
+    } else {
+      while(currentNode.next) {
+        currentNode = currentNode.next;
+      }
+      currentNode.next = newNode;
+    }
+  }
+
+  
+}
+
+module.exports = { Stack, Node, Queue };
