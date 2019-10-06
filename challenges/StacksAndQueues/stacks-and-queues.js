@@ -9,32 +9,30 @@ class Stack {
   constructor() {
     this.top = null;
   }
-  
-  push(value) {
-    let head = this.stack;
-    const newNode = new Node(null, value);
 
-    if(!head) {
-      this.stack = newNode;
+  push(value) {
+    const newNode = new Node(value);
+    if(this.top === null) {
+      return this.top = newNode;
     } else {
-      newNode.next = head;
-      this.stack = newNode;
+      newNode.next = this.top;
+      this.top = newNode;
     }
+    return this.top.value;
   }
 
-  // pop() {
-  //   let head = this.stack;
+  pop() {
+    let stuff;
+    if(this.top) {
+      stuff = this.top.value;
+      this.top = this.top.next;
+    }
+    return stuff;
+  }
 
-  //   if(!head) return 'Empty Stack';
-
-  //   this.stack = head.next;
-  //   return head.value;
-  // }
-
-  // peek() {
-  //   if(!this.stack) return 'empty stack';
-  //   return this.stack.value;
-  // }
+  peek() {
+    return this.top.value;
+  }
 
 }
 

@@ -121,7 +121,7 @@ describe('linked lists', () => {
     expect(result).toBe('not the same length');
   });
 
-  it('k is in happy place', () => {
+  it.skip('k is in happy place', () => {
     const list = new LinkList();
     list.insert('node1');
     list.insert('node2');
