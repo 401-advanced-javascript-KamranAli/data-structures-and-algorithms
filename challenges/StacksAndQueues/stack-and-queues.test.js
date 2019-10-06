@@ -71,7 +71,7 @@ describe('stacks and queues', () => {
     const queue = new Stack.Queue();
     queue.enqueue('thing1');
     queue.enqueue('thing');
-    expect(queue.peek()).toBe('thing1');
+    expect(queue.front.value).toBe('thing1');
   });
 
   it('can empty a queue after multiple dequeue', () => {
