@@ -46,6 +46,45 @@ describe('stacks and queues', () => {
   });
 
   it('can enqueue on to a queue', () => {
+    const queue = new Stack.Queue();
+    queue.enqueue('thing1');
+    expect(queue.front.value).toBe('thing1');
+  });
 
+  it('can enqueue mutltiple things', () => {
+    const queue = new Stack.Queue();
+    queue.enqueue('thing1');
+    queue.enqueue('thing');
+    expect(queue.front.value).toBe('thing1');
+    expect(queue.front.next.value).toBe('thing');
+  });
+
+  it('can dequeue off a queue', () => {
+    const queue = new Stack.Queue();
+    queue.enqueue('thing1');
+    queue.enqueue('thing2');
+    const result = queue.dequeue();
+    expect(result).toBe('thing1');
+  });
+
+  it('can peek into a queue', () => {
+    const queue = new Stack.Queue();
+    queue.enqueue('thing1');
+    queue.enqueue('thing');
+    expect(queue.peek()).toBe('thing1');
+  });
+
+  it('can empty a queue after multiple dequeue', () => {
+    const queue = new Stack.Queue();
+    queue.enqueue('thing1');
+    queue.enqueue('thing');
+    queue.dequeue();
+    queue.dequeue();
+    expect(queue.front).toBe(null);
+  });
+
+  it('can instantiate an empty queue', () => {
+    const queue = new Stack.Queue();
+    expect(queue.front).toBe(null);
   });
 });
