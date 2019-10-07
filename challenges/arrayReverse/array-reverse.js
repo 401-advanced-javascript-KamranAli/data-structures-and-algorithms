@@ -1,11 +1,9 @@
 
-let newArray = [1, 2, 3, 4, 5, 6];
+let array = [1, 2, 3, 4, 5, 6];
 
 function reverseArray(array) {
-    for (i = array.length - 1; i >= 0; i--) {
-        newArray.push(array[i]);
-    }
-    return newArray
+  for(let i = 0, j = array.length - 1; i < j; i++, j--) {
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
-
-reverseArray();
+reverseArray(array);
