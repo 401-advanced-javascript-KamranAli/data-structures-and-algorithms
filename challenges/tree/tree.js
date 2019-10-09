@@ -51,6 +51,14 @@ class BinaryTree {
     return preOrderHelp(this.root, []);
   }
 
+  inOrder() {
+    return inOrderHelp(this.root, []);
+  }
+
+  postOrder() {
+    return postOrderHelp(this.root, []);
+  }
+
 }
 
 function preOrderHelp(node, result) {
@@ -58,6 +66,24 @@ function preOrderHelp(node, result) {
     result.push(node.value);
     if(node.left) preOrderHelp(node.left, result);
     if(node.right) preOrderHelp(node.right, result);
+  }
+  return result;
+}
+
+function inOrderHelp(node, result) {
+  if(node) {
+    if(node.left) inOrderHelp(node.left, result);
+    result.push(node.value);
+    if(node.right) inOrderHelp(node.right, result);
+  }
+  return result;
+}
+
+function postOrderHelp(node, result) {
+  if(node) {
+    if(node.left) postOrderHelp(node.left, result);
+    if(node.right) postOrderHelp(node.right, result);
+    result.push(node.value);
   }
   return result;
 }
