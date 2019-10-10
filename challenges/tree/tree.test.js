@@ -63,4 +63,20 @@ describe(' Binary Search Tree', () => {
     const result = tree.postOrder();
     expect(result).toEqual([1, 3, 4, 2, 7, 6]);
   });
+
+  it('can traverse in breadth first order', () => {
+    const tree = new Tree.BinaryTree();
+    tree.add(8);
+    tree.add(5);
+    tree.add(9);
+    tree.add(3);
+    tree.add(4);
+    tree.add(1);
+    tree.add(2);
+    tree.add(7);
+    tree.add(6);
+
+    const result = tree.breadthFirst();
+    expect(result).toEqual([8, 5, 9, 3, 7, 1, 4, 6, 2]);
+  });
 });
